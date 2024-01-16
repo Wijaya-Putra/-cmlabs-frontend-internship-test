@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
-import { ChevronRightSquare } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 interface data {
   idCategory: string;
@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <>
       {/* Hero  */}
-      <MaxWidthWrapper className="flex flex-col gap-y-6 justify-center items-center">
+      <MaxWidthWrapper className="flex flex-col gap-y-6 justify-center items-center bg-no-repeat bg-cover bg-[url('/assets/hero.png')] text-white">
         <h1 className="font-bold text-6xl">Meals App</h1>
         <p className="text-center lg:text-base text-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
@@ -41,8 +41,10 @@ export default async function Home() {
 
       {/* List */}
       <MaxWidthWrapper className="flex flex-col justify-center items-center py-16">
-        <h1 className="font-bold text-6xl pb-16">Categories</h1>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+        <h1 className="font-bold text-6xl">Categories</h1>
+        <Separator className="my-4" />
+
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
           {data.map((item) => (
             <>
               <Link

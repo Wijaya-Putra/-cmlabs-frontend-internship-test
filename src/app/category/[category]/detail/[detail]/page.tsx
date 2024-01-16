@@ -3,6 +3,7 @@ import axios from "axios";
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 
 interface data {
   idMeal: string;
@@ -83,16 +84,19 @@ export default async function Details({
   return (
     <>
       {/* Hero  */}
-      <MaxWidthWrapper className="h-fit flex flex-col py-32 gap-y-6 justify-center items-center">
+      <MaxWidthWrapper className="h-fit flex flex-col py-32 gap-y-4 justify-center items-center">
         {data ? (
           data.map((item) => (
             <>
-              <h1 key={item.idMeal} className="font-bold text-6xl">
+              <h1 key={item.idMeal} className="font-bold text-6xl text-center">
                 {item.strMeal}
               </h1>
               <h1 className="font-bold text-lg">
                 {item.strCategory}, {item.strArea}
               </h1>
+
+              <Separator className="my-4" />
+
               <div className="w-full h-fit flex flex-col lg:flex-row justify-center gap-y-8">
                 <div className="w-full lg:w-1/2  gap-y-4 h-full flex flex-col items-center lg:items-start">
                   <Image
@@ -189,6 +193,7 @@ export default async function Details({
                 src={embedLink}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="w-full lg:w-1/2 "
               ></iframe>
             </>
           ))

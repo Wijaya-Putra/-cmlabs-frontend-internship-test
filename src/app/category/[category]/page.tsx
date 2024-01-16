@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { Separator } from "@/components/ui/separator";
 
 interface data {
   strMeal: string;
@@ -46,15 +47,17 @@ export default async function Meals({
   return (
     <>
       {/* Hero  */}
-      <MaxWidthWrapper className="flex flex-col gap-y-6 justify-center items-center">
+      <MaxWidthWrapper className="flex flex-col gap-y-6 justify-center items-center  bg-gradient-to-b from-orange-100 to-transparent">
         <h1 className="font-bold text-5xl lg:text-6xl">{params.category}</h1>
         <p className="text-center lg:text-base text-xs">{catDesciption}</p>
       </MaxWidthWrapper>
 
       <MaxWidthWrapper className="flex flex-col justify-center items-center py-16">
-        <h1 className="font-bold text-6xl pb-16">Meals</h1>
+        <h1 className="font-bold text-6xl">Meals</h1>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+        <Separator className="my-4" />
+
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
           {data.map((item) => (
             <>
               <Link

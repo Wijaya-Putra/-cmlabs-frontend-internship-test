@@ -29,7 +29,7 @@ const PageNav = () => {
 
   return (
     <>
-      <div className=" w-full h-20 absolute border-b-2 border-gray-500 bg-orange-200">
+      <div className="z-10 w-full h-20 absolute shadow-md bg-orange-200">
         <div className="flex flex-row w-full h-full justify-between items-center px-4 lg:px-16">
           <Link href="/" className="text-2xl font-bold">
             Meals App
@@ -44,18 +44,24 @@ const PageNav = () => {
         <Sheet>
           {/* Trigger Full */}
           <SheetTrigger
-            className={`fixed top-4 right-4 z-10 rounded-full p-7 outline-none transition-opacity duration-1000 border-[2px] border-gray-500 
+            className={`fixed top-4 right-4 z-10 rounded-full p-7 outline-none transition-opacity duration-1000 border-[2px] border-orange-500 
             ${isVisible ? "opacity-100" : "opacity-0"}`}
           >
             <AlignJustify
-              color="#6b7280
+              color="#f97316
 "
             />
           </SheetTrigger>
 
           {/* Trigger Small */}
-          <SheetTrigger className="visible lg:invisible fixed top-4 right-4 z-10 rounded-full p-7 outline-none border-[2px] border-gray-500">
-            <AlignJustify />
+          <SheetTrigger
+            className={`fixed top-4 right-4 z-10 rounded-full p-7 outline-none transition-opacity duration-1000 border-[2px] border-orange-500 
+            ${isVisible ? "opacity-100" : "opacity-0"}`}
+          >
+            <AlignJustify
+              color="#f97316
+"
+            />
           </SheetTrigger>
 
           <SheetContent>
