@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Link from "next/link";
+import Image from "next/image";
 
 interface data {
   strMeal: string;
@@ -29,8 +30,13 @@ export default async function Meals({
               key={item.idMeal}
               href={`/category/${params.category}/detail/${item.idMeal}`}
             >
+              <Image
+                src={item.strMealThumb}
+                alt={item.strMealThumb}
+                width={500}
+                height={500}
+              />
               {item.strMeal}
-              {item.idMeal}
             </Link>
           </>
         ))}
